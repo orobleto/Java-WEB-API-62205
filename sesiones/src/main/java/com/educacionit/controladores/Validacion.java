@@ -2,7 +2,6 @@ package com.educacionit.controladores;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;

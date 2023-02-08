@@ -1,0 +1,4 @@
+2023-02-07 19:44:55.889 ERROR  -com.educacionit.javawebapi.conector_db.App.main(App.java:17) - este es error
+2023-02-07 19:51:36.572 ERROR  -com.educacionit.javawebapi.conector_db.App.main(App.java:17) - este es error
+2023-02-07 19:51:36.572 FATAL  -com.educacionit.javawebapi.conector_db.App.main(App.java:18) - este es fatal
+2023-02-07 21:40:17.116 ERROR  -com.educacionit.javawebapi.jdbc.implementaciones.UsuarioImplementacion.insertar(UsuarioImplementacion.java:82) - java.sql.SQLIntegrityConstraintViolationException: (conn=31) Duplicate entry 'oct4@gmail.com' for key 'PRIMARY'
