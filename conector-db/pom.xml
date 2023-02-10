@@ -5,6 +5,7 @@
 
 
 	<artifactId>conector-db</artifactId>
+	<packaging>jar</packaging>
 
 
 	<name>conector-db</name>
@@ -50,6 +51,7 @@
 	</dependencies>
 
 	<build>
+	<defaultGoal>package</defaultGoal>
 		<pluginManagement>
 			<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
 			<plugins>

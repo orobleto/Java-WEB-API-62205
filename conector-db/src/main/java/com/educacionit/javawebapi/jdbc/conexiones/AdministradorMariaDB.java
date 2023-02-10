@@ -9,6 +9,8 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.octaviorobleto.commons.utilities.text.CodeUtils;
+
 public final class AdministradorMariaDB {
 	private static Logger logger = LogManager.getLogger();
 	private static AdministradorMariaDB administradorMariaDB;
@@ -50,7 +52,7 @@ public final class AdministradorMariaDB {
 			String usuario = propiedades.getProperty("db.usuario");
 			String clave = propiedades.getProperty("db.clave");
 
-			setLlave(propiedades.getProperty("db.llave"));
+			setLlave(CodeUtils.BASE64_Decode(propiedades.getProperty("db.llave")));
 
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url, usuario, clave);

@@ -1,9 +1,14 @@
 package com.educacionit.javawebapi.entidades;
 
-import com.educacionit.javawebapi.jdbc.implementaciones.UsuarioImplementacion;
+import javax.xml.ws.Endpoint;
+
+import com.educacionit.javawebapi.servicios.HolaMundo;
 
 public class App {
 	public static void main(String[] args) {
-		Usuario usuario = new Usuario();
+		System.out.println("Inicio");
+		Endpoint.publish("http://localhost:8080/ServicioWeb/HolaMundo", new HolaMundo());
+		System.out.println("Fin");
+		
 	}
 }

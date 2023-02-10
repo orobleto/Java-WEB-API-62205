@@ -11,11 +11,11 @@
 	</modules>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
+
 		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-xml</artifactId>
-			<version>2.14.2</version>
+			<groupId>com.octaviorobleto.commons</groupId>
+			<artifactId>commons-utilities</artifactId>
+			<version>1.0.1</version>
 		</dependency>
 
 

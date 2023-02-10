@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://servicios.javawebapi.educacionit.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://servicios.javawebapi.educacionit.com" xmlns:intf="http://servicios.javawebapi.educacionit.com" xmlns:tns1="http://dtos.javawebapi.educacionit.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://servicios.javawebapi.educacionit.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://dtos.javawebapi.educacionit.com"/>
+   <element name="buscarPorID">
+    <complexType>
+     <sequence>
+      <element name="correo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscarPorIDResponse">
+    <complexType>
+     <sequence>
+      <element name="buscarPorIDReturn" type="tns1:UsuarioDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="listar">
+    <complexType/>
+   </element>
+   <element name="listarResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="listarReturn" type="tns1:UsuarioDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="guardar">
+    <complexType>
+     <sequence>
+      <element name="usuarioDTO" type="tns1:UsuarioDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="guardarResponse">
+    <complexType>
+     <sequence>
+      <element name="guardarReturn" type="tns1:UsuarioDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminar">
+    <complexType>
+     <sequence>
+      <element name="usuarioDTO" type="tns1:UsuarioDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarResponse">
+    <complexType>
+     <sequence>
+      <element name="eliminarReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://dtos.javawebapi.educacionit.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="UsuarioDTO">
+    <sequence>
+     <element name="activo" nillable="true" type="xsd:boolean"/>
+     <element name="clave" nillable="true" type="xsd:string"/>
+     <element name="correo" nillable="true" type="xsd:string"/>
+     <element name="fechaCreacion" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="eliminarRequest">
+
+      <wsdl:part element="impl:eliminar" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listarRequest">
+
+      <wsdl:part element="impl:listar" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarPorIDRequest">
+
+      <wsdl:part element="impl:buscarPorID" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarPorIDResponse">
+
+      <wsdl:part element="impl:buscarPorIDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="guardarResponse">
+
+      <wsdl:part element="impl:guardarResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarResponse">
+
+      <wsdl:part element="impl:eliminarResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listarResponse">
+
+      <wsdl:part element="impl:listarResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="guardarRequest">
+
+      <wsdl:part element="impl:guardar" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UsuarioServicio">
+
+      <wsdl:operation name="buscarPorID">
+
+         <wsdl:input message="impl:buscarPorIDRequest" name="buscarPorIDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscarPorIDResponse" name="buscarPorIDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listar">
+
+         <wsdl:input message="impl:listarRequest" name="listarRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listarResponse" name="listarResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="guardar">
+
+         <wsdl:input message="impl:guardarRequest" name="guardarRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:guardarResponse" name="guardarResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminar">
+
+         <wsdl:input message="impl:eliminarRequest" name="eliminarRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:eliminarResponse" name="eliminarResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UsuarioServicioSoapBinding" type="impl:UsuarioServicio">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="buscarPorID">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscarPorIDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscarPorIDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="guardar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="guardarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="guardarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="eliminarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="eliminarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UsuarioServicioService">
+
+      <wsdl:port binding="impl:UsuarioServicioSoapBinding" name="UsuarioServicio">
+
+         <wsdlsoap:address location="http://localhost:8080/servicio-web/services/UsuarioServicio"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
