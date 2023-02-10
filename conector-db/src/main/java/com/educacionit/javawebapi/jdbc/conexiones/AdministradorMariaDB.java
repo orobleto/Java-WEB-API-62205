@@ -6,13 +6,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.octaviorobleto.commons.utilities.text.CodeUtils;
 
 public final class AdministradorMariaDB {
-	private static Logger logger = LogManager.getLogger();
+	// private static Logger logger = LogManager.getLogger();
 	private static AdministradorMariaDB administradorMariaDB;
 	private Connection connection;
 	private String llave;
@@ -57,11 +54,11 @@ public final class AdministradorMariaDB {
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url, usuario, clave);
 		} catch (ClassNotFoundException e) {
-			logger.error(e);
+			// logger.error(e);
 		} catch (SQLException e) {
-			logger.error(e);
+			// logger.error(e);
 		} catch (IOException e) {
-			logger.error(e);
+			// logger.error(e);
 		}
 
 	}

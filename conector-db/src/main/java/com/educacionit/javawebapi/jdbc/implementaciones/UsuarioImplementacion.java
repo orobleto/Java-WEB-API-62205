@@ -7,16 +7,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.educacionit.javawebapi.entidades.Usuario;
 import com.educacionit.javawebapi.jdbc.conexiones.AdministradorMariaDB;
 import com.educacionit.javawebapi.jdbc.interfaces.DAO;
 import com.octaviorobleto.commons.utilities.time.DateUtils;
 
 public class UsuarioImplementacion implements DAO<Usuario, String> {
-	private static Logger logger = LogManager.getLogger();
+	//private static Logger logger = LogManager.getLogger();
 	private PreparedStatement preparedStatementBuscarPorID;
 	private PreparedStatement preparedStatementInsertar;
 	private PreparedStatement preparedStatementModificar;
@@ -50,7 +47,7 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 			}
 
 		} catch (SQLException e) {
-			logger.error(e);
+			//logger.error(e);
 		}
 
 		return null;
@@ -80,10 +77,10 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 			preparedStatementInsertar.setBoolean(5, usuario.getActivo());
 
 			boolean inserto = preparedStatementInsertar.executeUpdate() == 1;
-			logger.debug(inserto ? usuario : null);
+			//logger.debug(inserto ? usuario : null);
 			return inserto;
 		} catch (SQLException e) {
-			logger.error(e);
+			//logger.error(e);
 		}
 		return false;
 	}
@@ -101,11 +98,11 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 			preparedStatementModificar.setString(4, usuario.getCorreo());
 
 			boolean modifico = preparedStatementModificar.executeUpdate() == 1;
-			logger.debug(modifico ? usuario : null);
+			//logger.debug(modifico ? usuario : null);
 			return modifico;
 
 		} catch (SQLException e) {
-			logger.error(e);
+			//logger.error(e);
 		}
 
 		return false;
@@ -119,11 +116,11 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 			}
 			preparedStatementEliminar.setString(1, usuario.getCorreo());
 			boolean elimino = preparedStatementEliminar.executeUpdate() == 1;
-			logger.debug(elimino ? usuario : null);
+			//logger.debug(elimino ? usuario : null);
 			return elimino;
 
 		} catch (SQLException e) {
-			logger.error(e);
+			//logger.error(e);
 		}
 
 		return false;
@@ -152,7 +149,7 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 			}
 
 		} catch (SQLException e) {
-			logger.error(e);
+			//logger.error(e);
 		}
 
 		return lista;
