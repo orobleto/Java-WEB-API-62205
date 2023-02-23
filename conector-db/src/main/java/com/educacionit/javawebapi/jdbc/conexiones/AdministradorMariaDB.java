@@ -6,8 +6,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import com.octaviorobleto.commons.utilities.text.CodeUtils;
-
 public final class AdministradorMariaDB {
 	// private static Logger logger = LogManager.getLogger();
 	private static AdministradorMariaDB administradorMariaDB;
@@ -49,7 +47,7 @@ public final class AdministradorMariaDB {
 			String usuario = propiedades.getProperty("db.usuario");
 			String clave = propiedades.getProperty("db.clave");
 
-			setLlave(CodeUtils.BASE64_Decode(propiedades.getProperty("db.llave")));
+		//	setLlave(CodeUtils.BASE64_Decode(propiedades.getProperty("db.llave")));
 
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url, usuario, clave);

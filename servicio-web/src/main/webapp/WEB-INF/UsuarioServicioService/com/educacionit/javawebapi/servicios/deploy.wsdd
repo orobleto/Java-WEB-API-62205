@@ -13,13 +13,13 @@
       <operation xmlns:operNS="http://servicios.javawebapi.educacionit.com" xmlns:retNS="http://servicios.javawebapi.educacionit.com" xmlns:rtns="http://dtos.javawebapi.educacionit.com" name="buscarPorID" qname="operNS:buscarPorID" returnQName="retNS:buscarPorIDReturn" returnType="rtns:UsuarioDTO" soapAction="">
         <parameter xmlns:pns="http://servicios.javawebapi.educacionit.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:correo" type="tns:string"/>
       </operation>
-      <operation xmlns:operNS="http://servicios.javawebapi.educacionit.com" xmlns:retNS="http://servicios.javawebapi.educacionit.com" xmlns:rtns="http://dtos.javawebapi.educacionit.com" name="listar" qname="operNS:listar" returnQName="retNS:listarReturn" returnType="rtns:UsuarioDTO" soapAction="">
-      </operation>
       <operation xmlns:operNS="http://servicios.javawebapi.educacionit.com" xmlns:retNS="http://servicios.javawebapi.educacionit.com" xmlns:rtns="http://dtos.javawebapi.educacionit.com" name="guardar" qname="operNS:guardar" returnQName="retNS:guardarReturn" returnType="rtns:UsuarioDTO" soapAction="">
         <parameter xmlns:pns="http://servicios.javawebapi.educacionit.com" xmlns:tns="http://dtos.javawebapi.educacionit.com" qname="pns:usuarioDTO" type="tns:UsuarioDTO"/>
       </operation>
       <operation xmlns:operNS="http://servicios.javawebapi.educacionit.com" xmlns:retNS="http://servicios.javawebapi.educacionit.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="eliminar" qname="operNS:eliminar" returnQName="retNS:eliminarReturn" returnType="rtns:boolean" soapAction="">
         <parameter xmlns:pns="http://servicios.javawebapi.educacionit.com" xmlns:tns="http://dtos.javawebapi.educacionit.com" qname="pns:usuarioDTO" type="tns:UsuarioDTO"/>
+      </operation>
+      <operation xmlns:operNS="http://servicios.javawebapi.educacionit.com" xmlns:retNS="http://servicios.javawebapi.educacionit.com" xmlns:rtns="http://dtos.javawebapi.educacionit.com" name="listar" qname="operNS:listar" returnQName="retNS:listarReturn" returnType="rtns:UsuarioDTO" soapAction="">
       </operation>
       <parameter name="allowedMethods" value="guardar eliminar buscarPorID listar"/>
 

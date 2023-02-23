@@ -3,14 +3,12 @@ package com.educacionit.javawebapi.jdbc.implementaciones;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.educacionit.javawebapi.entidades.Usuario;
 import com.educacionit.javawebapi.jdbc.conexiones.AdministradorMariaDB;
 import com.educacionit.javawebapi.jdbc.interfaces.DAO;
-import com.octaviorobleto.commons.utilities.time.DateUtils;
 
 public class UsuarioImplementacion implements DAO<Usuario, String> {
 	//private static Logger logger = LogManager.getLogger();
@@ -40,8 +38,7 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 				Usuario usuario = new Usuario();
 				usuario.setCorreo(resultSet.getString("correo"));
 				usuario.setClave(resultSet.getString("clave"));
-				usuario.setFechaCreacion(DateUtils.getLocalDateTime(resultSet.getString("fechaCreacion"),
-						DateUtils.FORMAT_YYYY_MM_DD_HH_MM_SS_24H));
+			//	usuario.setFechaCreacion(DateUtils.getLocalDateTime(resultSet.getString("fechaCreacion"),					DateUtils.FORMAT_YYYY_MM_DD_HH_MM_SS_24H));
 				usuario.setActivo(resultSet.getBoolean("activo"));
 				return usuario;
 			}
@@ -72,8 +69,8 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 			preparedStatementInsertar.setString(2, usuario.getClave());
 			preparedStatementInsertar.setString(3,
 					(administradorMariaDB.getLlave().concat(usuario.getCorreo().toLowerCase())));
-			preparedStatementInsertar.setString(4,
-					DateUtils.getString(LocalDateTime.now(), DateUtils.FORMAT_YYYY_MM_DD_HH_MM_SS_24H));
+		//	preparedStatementInsertar.setString(4,
+					//DateUtils.getString(LocalDateTime.now(), DateUtils.FORMAT_YYYY_MM_DD_HH_MM_SS_24H));
 			preparedStatementInsertar.setBoolean(5, usuario.getActivo());
 
 			boolean inserto = preparedStatementInsertar.executeUpdate() == 1;
@@ -140,10 +137,10 @@ public class UsuarioImplementacion implements DAO<Usuario, String> {
 				Usuario usuario = new Usuario();
 				usuario.setCorreo(resultSet.getString("correo"));
 				usuario.setClave(resultSet.getString("clave"));
-				usuario.setFechaCreacion(DateUtils.getLocalDateTime(resultSet.getString("fechaCreacion"),
+			/*	usuario.setFechaCreacion(DateUtils.getLocalDateTime(resultSet.getString("fechaCreacion"),
 						DateUtils.FORMAT_YYYY_MM_DD_HH_MM_SS_24H)
 
-				);
+				);*/
 				usuario.setActivo(resultSet.getBoolean("activo"));
 				lista.add(usuario);
 			}

@@ -10,7 +10,6 @@ import javax.jws.WebService;
 import com.educacionit.javawebapi.dtos.UsuarioDTO;
 import com.educacionit.javawebapi.entidades.Usuario;
 import com.educacionit.javawebapi.jdbc.implementaciones.UsuarioImplementacion;
-import com.octaviorobleto.commons.utilities.time.DateUtils;
 
 @WebService(name = "UsuarioServicio", portName = "ServicioUsuario", targetNamespace = "http://educacionit.com")
 public class UsuarioServicio {
@@ -54,7 +53,7 @@ public class UsuarioServicio {
 		usuarioDTO.setCorreo(usuario.getCorreo());
 		usuarioDTO.setClave(usuario.getClave());
 		usuarioDTO.setActivo(usuario.getActivo());
-		usuarioDTO.setFechaCreacion(DateUtils.getDate(usuario.getFechaCreacion()));
+	//	usuarioDTO.setFechaCreacion(DateUtils.getDate(usuario.getFechaCreacion()));
 		return usuarioDTO;
 	}
 
@@ -63,7 +62,7 @@ public class UsuarioServicio {
 		usuario.setCorreo(usuarioDTO.getCorreo());
 		usuario.setClave(usuarioDTO.getClave());
 		usuario.setActivo(usuarioDTO.getActivo());
-		usuario.setFechaCreacion(DateUtils.getLocalDateTime(usuarioDTO.getFechaCreacion()));
+	//	usuario.setFechaCreacion(DateUtils.getLocalDateTime(usuarioDTO.getFechaCreacion()));
 		return usuario;
 	}
 

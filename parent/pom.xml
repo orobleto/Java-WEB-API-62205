@@ -10,14 +10,4 @@
 		<module>../conector-db</module>
 	</modules>
 
-	<dependencies>
-
-		<dependency>
-			<groupId>com.octaviorobleto.commons</groupId>
-			<artifactId>commons-utilities</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-
-
-	</dependencies>
 </project>

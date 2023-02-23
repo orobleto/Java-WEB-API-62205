@@ -19,16 +19,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="listar">
-    <complexType/>
-   </element>
-   <element name="listarResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="listarReturn" type="tns1:UsuarioDTO"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="guardar">
     <complexType>
      <sequence>
@@ -54,6 +44,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="eliminarReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="listar">
+    <complexType/>
+   </element>
+   <element name="listarResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="listarReturn" type="tns1:UsuarioDTO"/>
      </sequence>
     </complexType>
    </element>
@@ -148,18 +148,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="listar">
-
-         <wsdl:input message="impl:listarRequest" name="listarRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:listarResponse" name="listarResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="guardar">
 
          <wsdl:input message="impl:guardarRequest" name="guardarRequest">
@@ -184,6 +172,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="listar">
+
+         <wsdl:input message="impl:listarRequest" name="listarRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listarResponse" name="listarResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="UsuarioServicioSoapBinding" type="impl:UsuarioServicio">
@@ -201,24 +201,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="buscarPorIDResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="listar">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="listarRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="listarResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -255,6 +237,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="eliminarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listarResponse">
 
             <wsdlsoap:body use="literal"/>
 
