@@ -6,7 +6,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>../servicio-web</module>
+		<module>../servicio-rest</module>
 		<module>../conector-db</module>
 	</modules>
 
